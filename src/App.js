@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import {TradePublicList} from "./features/trade/components/public/trade_public_list.component";
+import {PrimaryLayout} from "./app/layout/primary/primary_layout.component";
 
 function App() {
     return (
         <div className="App">
-            <TradePublicList/>
+            <PrimaryLayout>
+                
+            </PrimaryLayout>
         </div>
     );
 }
