@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
-class MarketPage extends Component {
+class MarketPage extends React.Component {
     render() {
         return (
             <div>
@@ -8,3 +8,5 @@ class MarketPage extends Component {
         );
     }
 }
+
+export default MarketPage;
