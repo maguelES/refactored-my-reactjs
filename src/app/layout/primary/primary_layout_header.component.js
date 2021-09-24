@@ -15,19 +15,16 @@ export function PrimaryLayoutHeader() {
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <a href="#"
-                                       className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                                       className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                                    <a href="aa"
+                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</a>
 
                                     <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</a>
 
                                     <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
-                                    <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-
-                                    <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                                 </div>
                             </div>
                         </div>
