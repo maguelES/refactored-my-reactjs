@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import {PrimaryLayout} from "./app/layout/primary/primary_layout.component";
+import PrimaryLayout from "./app/layout/primary/PrimaryLayout";
 
 
-function App() {
-    return (
-        <div className="App">
-            <PrimaryLayout>
-                
-            </PrimaryLayout>
-        </div>
-    );
+class App extends React.Component {
+    render() {
+        return (
+            <div className="App">
+                <PrimaryLayout/>
+            </div>
+        );
+    }
 }
 
 export default App;
+
