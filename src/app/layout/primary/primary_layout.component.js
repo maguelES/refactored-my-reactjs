@@ -1,6 +1,6 @@
-import {TradePublicList} from "../../../features/trade/components/public/trade_public_list.component";
+import {TradePublicList} from "../../../features/trade/components/public/TradePublicList";
 import React from "react";
-import {PrimaryLayoutHeader} from "./primary_layout_header.component";
+import {PrimaryLayoutHeader} from "./PrimaryLayoutHeader";
 
 export function PrimaryLayout() {
     return (
