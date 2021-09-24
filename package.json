@@ -26,7 +26,11 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/all"
+    ]
   },
   "browserslist": {
     "production": [
@@ -39,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0"
   }
 }
