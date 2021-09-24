@@ -29,7 +29,7 @@
     "extends": [
       "react-app",
       "eslint:recommended",
-      "plugin:react/all"
+      "plugin:react/recommended"
     ]
   },
   "browserslist": {
