@@ -7,7 +7,7 @@ import {MarketItemCard} from "../../../features/trade/components/public/MarketIt
 
 const routes = [
     {
-        path: "/",
+        path: "/home",
         component: TradePublicList,
         routes: [
             {
