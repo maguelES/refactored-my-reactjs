@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch} from "react-router-dom";
 import {TradePublicList} from "../../../features/trade/components/public/TradePublicList";
 import {BaseRouter} from "./BaseRouter";
 import {PrimaryLayoutHeader} from "../../layout/primary/PrimaryLayoutHeader";
+import {MarketItemCard} from "../../../features/trade/components/public/MarketItemCard";
 
 const routes = [
     {
@@ -10,11 +11,15 @@ const routes = [
         component: TradePublicList,
         routes: [
             {
-                path: "/test",
-                component: TradePublicList,
+                path: "aa",
+                component: MarketItemCard,
             }
-        ]
+        ],
     },
+    {
+        path: "/market",
+        component: MarketItemCard,
+    }
 ];
 
 export function PrimaryLayoutBase() {
