@@ -14,7 +14,6 @@ export function TradePublicList() {
 
     return (
         <div>
-
             <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
             <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
             <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
