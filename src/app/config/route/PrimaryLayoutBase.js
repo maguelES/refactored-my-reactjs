@@ -7,19 +7,15 @@ import {MarketItemCard} from "../../../features/trade/components/public/MarketIt
 
 const routes = [
     {
-        path: "/home",
+        path: "/",
         component: TradePublicList,
         routes: [
             {
-                path: "aa",
+                path: "market",
                 component: MarketItemCard,
             }
         ],
     },
-    {
-        path: "/market",
-        component: MarketItemCard,
-    }
 ];
 
 export function PrimaryLayoutBase() {
