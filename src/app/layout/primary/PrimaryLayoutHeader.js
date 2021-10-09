@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export function PrimaryLayoutHeader() {
     return (
@@ -14,17 +15,17 @@ export function PrimaryLayoutHeader() {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
-                                    <a href="#"
-                                       className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                    <Link to="/home"
+                                          className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
 
-                                    <a href="aa"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</a>
+                                    <Link to="market"
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
 
-                                    <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</a>
+                                    <Link to="/personal"
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</Link>
 
-                                    <a href="#"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                                    <Link to="/about"
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
                                 </div>
                             </div>
                         </div>
