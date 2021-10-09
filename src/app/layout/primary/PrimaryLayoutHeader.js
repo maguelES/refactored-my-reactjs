@@ -16,16 +16,16 @@ export function PrimaryLayoutHeader() {
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link to="/"
-                                       className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+                                          className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
 
-                                    <Link to="/market"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
+                                    <Link to="market"
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
 
                                     <Link to="/personal"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</Link>
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</Link>
 
                                     <Link to="/about"
-                                       className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
+                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
                                 </div>
                             </div>
                         </div>
