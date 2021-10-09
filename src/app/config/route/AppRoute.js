@@ -1,12 +1,18 @@
 import React from "react";
-import {Router, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Switch} from "react-router-dom";
 import {TradePublicList} from "../../../features/trade/components/public/TradePublicList";
 import {BaseRouter} from "./BaseRouter";
 
 const routes = [
     {
         path: "/",
-        component: TradePublicList
+        component: TradePublicList,
+        routes: [
+            {
+                path: "/test",
+                component: TradePublicList,
+            }
+        ]
     },
 ];
 

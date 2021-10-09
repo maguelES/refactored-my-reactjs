@@ -1,13 +1,13 @@
-import {TradePublicList} from "../../../features/trade/components/public/TradePublicList";
 import React from "react";
 import {PrimaryLayoutHeader} from "./PrimaryLayoutHeader";
+import {AppRoute} from "../../config/route/AppRoute";
 
 class PrimaryLayout extends React.Component {
     render() {
         return (
             <div>
                 <PrimaryLayoutHeader/>
-                <TradePublicList/>
+                <AppRoute/>
             </div>
         )
 
