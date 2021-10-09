@@ -17,7 +17,7 @@ const routes = [
     },
 ];
 
-export function AppRoute() {
+export function PrimaryLayoutBase() {
     return (
         <Router>
             <PrimaryLayoutHeader/>

@@ -1,15 +1,13 @@
 import React from "react";
-import {AppRoute} from "../../config/route/AppRoute";
+import {PrimaryLayoutBase} from "../../config/route/PrimaryLayoutBase";
 
 class PrimaryLayout extends React.Component {
     render() {
         return (
             <div>
-                <AppRoute/>
+                <PrimaryLayoutBase/>
             </div>
         )
-
-
     }
 }
 
