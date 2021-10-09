@@ -1,12 +1,8 @@
 import React from "react";
 
-class MarketPage extends React.Component {
-    render() {
-        return (
-            <div>
-            </div>
-        );
-    }
+export function MarketPage() {
+    return (
+        <div>
+        </div>
+    );
 }
-
-export default MarketPage;
