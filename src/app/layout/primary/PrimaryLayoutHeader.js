@@ -18,7 +18,7 @@ export function PrimaryLayoutHeader() {
                                     <Link to="/home"
                                           className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
 
-                                    <Link to="market"
+                                    <Link to="/market"
                                           className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
 
                                     <Link to="/personal"
