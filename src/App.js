@@ -9,7 +9,8 @@ import {PrimaryLayoutHeader} from "./app/layout/primary/PrimaryLayoutHeader";
 
 export const routes = [
     {
-        path: "/home",
+        path: "/",
+        exact: true,
         component: TradePublicList,
     },
     {
