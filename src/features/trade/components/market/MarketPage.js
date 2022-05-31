@@ -14,7 +14,7 @@ export function MarketPage() {
 
     return (
         <div className="flex flex-col flex-auto">
-            <div className={"self-start"}><h1 className="font-semibold text-lg mb-5">Market</h1></div>
+            <div className={"self-start"}><h1 className="text-3xl font-bold text-gray-900 mb-5">Market</h1></div>
             <div className="flex">
                 <div className="grid lg:grid grid-cols-2 grid-rows-2 items-center items-center gap-4">
                     <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>

@@ -5,7 +5,7 @@ import {PrimaryLayoutUserIcon} from "./PrimaryLayoutUserIcon";
 export function PrimaryLayoutHeader() {
     return (
         <div className="mb-5">
-            <nav className="bg-white shadow">
+            <nav className="bg-white border border-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
@@ -13,6 +13,9 @@ export function PrimaryLayoutHeader() {
                                 <img className="h-8 w-8"
                                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                                      alt="Workflow"/>
+                            </div>
+                            <div className="flex ml-4 font-bold text-lg text-gray-600">
+                                <span>Refactored</span>
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
