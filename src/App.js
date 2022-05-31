@@ -1,22 +1,21 @@
-import React from 'react';
 import './App.css';
+import React from 'react';
 import {BrowserRouter as Router, Switch} from "react-router-dom";
 import {BaseRouter} from "./app/config/route/BaseRouter";
-// import {PrimaryLayoutBase} from "./app/config/route/PrimaryLayoutBase";
-import {TradePublicList} from "./features/trade/components/public/TradePublicList";
-import {MarketItemCard} from "./features/trade/components/public/MarketItemCard";
 import {PrimaryLayoutHeader} from "./app/layout/primary/PrimaryLayoutHeader";
+import {MarketPage} from "./features/trade/components/market/MarketPage";
+import {UserDashboardPage} from "./features/dashboard/components/UserDashboardPage";
 
 export const routes = [
     {
         path: "/",
         exact: true,
-        component: TradePublicList,
+        component: UserDashboardPage,
     },
     {
         path: "/market",
-        component: MarketItemCard,
-    }
+        component: MarketPage,
+    },
 ];
 
 class App extends React.Component {
@@ -25,11 +24,13 @@ class App extends React.Component {
             <div className="App">
                 <Router>
                     <PrimaryLayoutHeader/>
-                    <Switch>
-                        {routes.map((route, i) => (
-                            <BaseRouter key={i} {...route} />
-                        ))}
-                    </Switch>
+                    <section className="flex pt-3 p-5">
+                        <Switch>
+                            {routes.map((route, i) => (
+                                <BaseRouter key={i} {...route} />
+                            ))}
+                        </Switch>
+                    </section>
                 </Router>
             </div>
         );
