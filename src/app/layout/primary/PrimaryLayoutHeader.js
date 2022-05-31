@@ -14,6 +14,9 @@ export function PrimaryLayoutHeader() {
                                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                                      alt="Workflow"/>
                             </div>
+                            <div className="flex ml-4 font-bold text-lg text-gray-600">
+                                <span>Refactored</span>
+                            </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link to="/"
