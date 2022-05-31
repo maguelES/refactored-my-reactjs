@@ -24,7 +24,7 @@ class App extends React.Component {
             <div className="App">
                 <Router>
                     <PrimaryLayoutHeader/>
-                    <section className="flex pt-3 p-5">
+                    <section className="flex pt-3 p-5 px-10">
                         <Switch>
                             {routes.map((route, i) => (
                                 <BaseRouter key={i} {...route} />
