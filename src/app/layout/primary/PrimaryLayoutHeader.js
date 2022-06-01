@@ -33,13 +33,13 @@ export function PrimaryLayoutHeader() {
                                           className={`${checkUrl('/')}`}>Home</Link>
 
                                     <Link to="/market"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
+                                          className={`${checkUrl('/market')}`}>Market</Link>
 
                                     <Link to="/personal"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</Link>
+                                          className={`${checkUrl('/personal')}`}>Personal</Link>
 
                                     <Link to="/about"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
+                                          className={`${checkUrl('/about')}`}>About</Link>
                                 </div>
                             </div>
                         </div>
