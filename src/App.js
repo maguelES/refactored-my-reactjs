@@ -22,16 +22,18 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <Router>
-                    <PrimaryLayoutHeader/>
-                    <section className="flex pt-3 p-5 px-10">
-                        <Switch>
-                            {routes.map((route, i) => (
-                                <BaseRouter key={i} {...route} />
-                            ))}
-                        </Switch>
-                    </section>
-                </Router>
+                <body className="h-screen bg-slate-50">
+                    <Router>
+                        <PrimaryLayoutHeader/>
+                        <section className="flex pt-3 p-5 px-10">
+                            <Switch>
+                                {routes.map((route, i) => (
+                                    <BaseRouter key={i} {...route} />
+                                ))}
+                            </Switch>
+                        </section>
+                    </Router>
+                </body>
             </div>
         );
     }

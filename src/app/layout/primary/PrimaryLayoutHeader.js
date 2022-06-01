@@ -1,8 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {PrimaryLayoutUserIcon} from "./PrimaryLayoutUserIcon";
 
 export function PrimaryLayoutHeader() {
+
+    const location = useLocation();
+
+    function checkUrl(navUrl) {
+        console.log(navUrl);
+        console.log(location.pathname);
+        return location.pathname === navUrl ? "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+            : "hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium";
+    }
+
     return (
         <div className="mb-5">
             <nav className="bg-white border border-2">
@@ -20,16 +30,16 @@ export function PrimaryLayoutHeader() {
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link to="/"
-                                          className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+                                          className={`${checkUrl('/')}`}>Home</Link>
 
                                     <Link to="/market"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
+                                          className={`${checkUrl('/market')}`}>Market</Link>
 
                                     <Link to="/personal"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Personal</Link>
+                                          className={`${checkUrl('/personal')}`}>Personal</Link>
 
                                     <Link to="/about"
-                                          className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
+                                          className={`${checkUrl('/about')}`}>About</Link>
                                 </div>
                             </div>
                         </div>
