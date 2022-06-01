@@ -67,19 +67,19 @@ export function PrimaryLayoutHeader() {
                 {/* Mobile Mode */}
                 <div className="hidden md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="#"
+                        <a href="/"
                            className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
-                        <a href="#"
+                        <a href="/"
                            className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
 
-                        <a href="#"
+                        <a href="/"
                            className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
 
-                        <a href="#"
+                        <a href="/"
                            className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
 
-                        <a href="#"
+                        <a href="/"
                            className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
                     </div>
                     <div className="pt-4 pb-3 border-t border-gray-700">
@@ -104,14 +104,14 @@ export function PrimaryLayoutHeader() {
                             </button>
                         </div>
                         <div className="mt-3 px-2 space-y-1">
-                            <a href="#"
+                            <a href="/"
                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your
                                 Profile</a>
 
-                            <a href="#"
+                            <a href="/"
                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Settings</a>
 
-                            <a href="#"
+                            <a href="/"
                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign
                                 out</a>
                         </div>
