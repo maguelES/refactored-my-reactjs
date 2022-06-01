@@ -5,6 +5,7 @@ import {BaseRouter} from "./app/config/route/BaseRouter";
 import {PrimaryLayoutHeader} from "./app/layout/primary/PrimaryLayoutHeader";
 import {MarketPage} from "./features/trade/components/market/MarketPage";
 import {UserDashboardPage} from "./features/dashboard/components/UserDashboardPage";
+import {PersonalPage} from "./features/personal/components/PersonalPage";
 
 export const routes = [
     {
@@ -16,6 +17,10 @@ export const routes = [
         path: "/market",
         component: MarketPage,
     },
+    {
+        path: "/personal",
+        component: PersonalPage
+    }
 ];
 
 class App extends React.Component {
