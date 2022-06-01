@@ -6,6 +6,13 @@ export function PrimaryLayoutHeader() {
 
     const location = useLocation();
 
+    function checkUrl(navUrl) {
+        console.log(navUrl);
+        console.log(location.pathname);
+        return location.pathname === navUrl ? "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+            : "hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium";
+    }
+
     return (
         <div className="mb-5">
             <nav className="bg-white border border-2">
@@ -19,13 +26,11 @@ export function PrimaryLayoutHeader() {
                             </div>
                             <div className="flex ml-4 font-bold text-lg text-gray-600">
                                 <span>Refactored</span>
-                                <span>Path: {location.pathname}</span>
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link to="/"
-                                          className={`${location.pathname === "/" ? "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" 
-                                              : "hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}`}>Home</Link>
+                                          className={`${checkUrl('/')}`}>Home</Link>
 
                                     <Link to="/market"
                                           className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Market</Link>
