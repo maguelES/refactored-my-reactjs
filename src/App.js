@@ -22,7 +22,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <body className="h-screen bg-slate-100">
+                <body className="h-screen bg-slate-50">
                     <Router>
                         <PrimaryLayoutHeader/>
                         <section className="flex pt-3 p-5 px-10">
