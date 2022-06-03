@@ -10,14 +10,19 @@ export function AboutPage() {
                 </span>
             </div>
 
-            <div className="flex flex-col bg-white drop-shadow-md px-5 py-4 rounded-md mt-5 mx-1 flex-grow">
-                <div className="mx-auto mt-5 flex flex-col">
+            <div className="flex flex-col bg-white drop-shadow-md px-5 py-4 rounded-md mt-2 mx-1 flex-grow">
+                <div className="bg-violet-50 mt-5 flex flex-col rounded-md p-4">
                     <span className="text-3xl font-extrabold text-slate-900">Need a market?</span>
                     <span className="text-3xl font-extrabold text-slate-900">We have compiled it for you!</span>
                 </div>
 
-                <div className="bg-violet-50 mt-5 rounded-md">
-                    <span>Test2</span>
+                <div className="grid grid-cols-2 mt-5 px-6">
+                    <div className="md:container md:mx-auto">
+                        <span className="font-bold">Our Story</span>
+                    </div>
+                    <div className="md:container md:mx-auto">
+                        <span className="font-bold">Achievement</span>
+                    </div>
                 </div>
             </div>
         </div>
