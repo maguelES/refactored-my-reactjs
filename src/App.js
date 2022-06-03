@@ -5,6 +5,8 @@ import {BaseRouter} from "./app/config/route/BaseRouter";
 import {PrimaryLayoutHeader} from "./app/layout/primary/PrimaryLayoutHeader";
 import {MarketPage} from "./features/trade/components/market/MarketPage";
 import {UserDashboardPage} from "./features/dashboard/components/UserDashboardPage";
+import {PersonalPage} from "./features/personal/components/PersonalPage";
+import {AboutPage} from "./features/about/components/AboutPage";
 
 export const routes = [
     {
@@ -16,6 +18,14 @@ export const routes = [
         path: "/market",
         component: MarketPage,
     },
+    {
+        path: "/personal",
+        component: PersonalPage
+    },
+    {
+        path: "/about",
+        component: AboutPage
+    }
 ];
 
 class App extends React.Component {
@@ -23,16 +33,16 @@ class App extends React.Component {
         return (
             <div className="App">
                 <body className="h-screen bg-slate-50">
-                    <Router>
-                        <PrimaryLayoutHeader/>
-                        <section className="flex pt-3 p-5 px-10">
-                            <Switch>
-                                {routes.map((route, i) => (
-                                    <BaseRouter key={i} {...route} />
-                                ))}
-                            </Switch>
-                        </section>
-                    </Router>
+                <Router>
+                    <PrimaryLayoutHeader/>
+                    <section className="flex pt-3 p-5 px-10">
+                        <Switch>
+                            {routes.map((route, i) => (
+                                <BaseRouter key={i} {...route} />
+                            ))}
+                        </Switch>
+                    </section>
+                </Router>
                 </body>
             </div>
         );
