@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import tradeListStore from "../features/trade/logic/store/tradeListStore";
+import tradeListStore from "../features/trade/logic/store/tradeListSlice";
 
 export default configureStore({
     reducer: {

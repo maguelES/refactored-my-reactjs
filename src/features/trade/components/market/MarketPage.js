@@ -4,7 +4,7 @@ import {
     selectTradeListDescription,
     selectTradeListSubtitle,
     selectTradeListTitle
-} from "../../logic/store/tradeListStore";
+} from "../../logic/store/tradeListSlice";
 import {MarketItemCard} from "../public/MarketItemCard";
 
 export function MarketPage() {
