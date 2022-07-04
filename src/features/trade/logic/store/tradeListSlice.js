@@ -27,16 +27,21 @@ export const tradeListSlice = createSlice({
     reducers: {
         tradeItemAdded(state, action) {
             state.list.push({
+                id: action.payload.id,
                 title: action.payload.header,
                 subtitle: action.payload.subHeader,
                 description: action.payload.description,
             })
+        },
+
+        tradeItemDeleted(state, action) {
+            state.list.pop();
         }
     }
 })
 
 export const selectTradeList = state => state.tradeList.list;
 
-export const {tradeItemAdded} = tradeListSlice.actions
+export const {tradeItemAdded, tradeItemDeleted} = tradeListSlice.actions
 
 export default tradeListSlice.reducer;

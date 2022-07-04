@@ -2,9 +2,10 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
     selectTradeList,
-    tradeItemAdded
+    tradeItemAdded, tradeItemDeleted
 } from "../../logic/store/tradeListSlice";
 import {MarketItemCard} from "../public/MarketItemCard";
+import {nanoid} from "@reduxjs/toolkit";
 
 export function MarketPage() {
 
@@ -13,11 +14,16 @@ export function MarketPage() {
 
         dispatch(
             tradeItemAdded({
+                id: nanoid(),
                 header: "Case Study IV",
                 subHeader: "Finding customers might not be a new business after all..",
                 description: "Getting business yadaa yadaa daa"
             })
         );
+    }
+
+    const onDelItemClicked = () => {
+        dispatch(tradeItemDeleted());
     }
 
     const items = useSelector(selectTradeList);
@@ -32,6 +38,9 @@ export function MarketPage() {
                 <form>
                     <button type={"button"} className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"} onClick={onAddItemClicked}>
                         Save Post
+                    </button>
+                    <button type={"button"} className={"text-indigo-600 rounded-lg bg-white text-sm px-5 py-2.5 mr-2 mb-2 border border-gray-200"} onClick={onDelItemClicked}>
+                        Delete
                     </button>
                 </form>
             </section>
