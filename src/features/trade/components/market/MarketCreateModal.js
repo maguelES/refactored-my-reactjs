@@ -46,34 +46,41 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                 <div className="fixed inset-0 flex items-center justify-center">
                     <Dialog.Panel className="mx-auto max-w-sm rounded bg-white px-9 py-6">
 
-                        <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-900"}>Create Trade
+                        <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-700"}>Create Trade
                             Item</Dialog.Title>
 
                         <div className={"mb-10"}>
                             <form>
                                 <div className="mb-4">
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        htmlFor="username">
                                         Title
                                     </label>
                                     <input
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="username" type="text" placeholder="Username"></input>
+                                        className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="username" type="text"></input>
                                 </div>
                                 <div className="mb-6">
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        htmlFor="password">
                                         SubTitle
                                     </label>
                                     <input
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="password" type="password" placeholder="******************">
+                                        className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="password" type="text">
                                     </input>
                                     {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
                                 </div>
                                 <div className="mb-6">
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        htmlFor="password">
                                         Description
                                     </label>
-                                    <textarea className={"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"}>
+                                    <textarea
+                                        className={"appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"}>
 
                                     </textarea>
                                     {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
