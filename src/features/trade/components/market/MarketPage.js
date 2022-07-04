@@ -1,9 +1,7 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
-    selectTradeListDescription,
-    selectTradeListSubtitle,
-    selectTradeListTitle,
+    selectTradeList,
     tradeItemAdded
 } from "../../logic/store/tradeListSlice";
 import {MarketItemCard} from "../public/MarketItemCard";
@@ -11,22 +9,21 @@ import {MarketItemCard} from "../public/MarketItemCard";
 export function MarketPage() {
 
     const dispatch = useDispatch();
-
-    // Redux State
-    const title = useSelector(selectTradeListTitle);
-    const subtitle = useSelector(selectTradeListSubtitle)
-    const desc = useSelector(selectTradeListDescription);
-
     const onAddItemClicked = () => {
 
         dispatch(
             tradeItemAdded({
-                header: "Test Test Test",
-                subHeader: "Test Omega Test Test. Houston, are you there?",
-                description: "Yes, I am here."
+                header: "Case Study IV",
+                subHeader: "Finding customers might not be a new business after all..",
+                description: "Getting business yadaa yadaa daa"
             })
         );
     }
+
+    const items = useSelector(selectTradeList);
+    const tradeItems = items.map(item => (
+        <MarketItemCard key={item.id} title={item.title} subtitle={item.subtitle} desc={item.description}/>
+    ));
 
     return (
         <div className="flex flex-col flex-auto">
@@ -40,9 +37,7 @@ export function MarketPage() {
             </section>
             <div className="flex">
                 <div className="grid lg:grid grid-cols-2 grid-rows-2 items-center items-center gap-4">
-                    <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
-                    <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
-                    <MarketItemCard title={title} subtitle={subtitle} desc={desc}/>
+                    {tradeItems}
                 </div>
             </div>
         </div>

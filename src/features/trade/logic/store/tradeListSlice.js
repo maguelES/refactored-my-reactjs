@@ -3,23 +3,40 @@ import {createSlice} from "@reduxjs/toolkit";
 export const tradeListSlice = createSlice({
     name: "tradeList",
     initialState: {
-        title: "Case Study IV",
-        subtitle: "Finding customers might not be a new business after all..",
-        description: "Getting business yadaa yadaa daa"
+        list: [
+            {
+                id: 1,
+                title: "Case Study IV",
+                subtitle: "Finding customers might not be a new business after all..",
+                description: "Getting business yadaa yadaa daa"
+            },
+            {
+                id: 2,
+                title: "Case Study IV",
+                subtitle: "Finding customers might not be a new business after all..",
+                description: "Getting business yadaa yadaa daa"
+            },
+            {
+                id: 3,
+                title: "Case Study IV",
+                subtitle: "Finding customers might not be a new business after all..",
+                description: "Getting business yadaa yadaa daa"
+            }
+        ]
     },
     reducers: {
         tradeItemAdded(state, action) {
-            state.title = action.payload.header;
-            state.subtitle = action.payload.subHeader;
-            state.description = action.payload.description;
+            state.list.push({
+                title: action.payload.header,
+                subtitle: action.payload.subHeader,
+                description: action.payload.description,
+            })
         }
     }
 })
 
-export const selectTradeListTitle = state => state.tradeList.title;
-export const selectTradeListSubtitle = state => state.tradeList.subtitle;
-export const selectTradeListDescription = state => state.tradeList.description;
+export const selectTradeList = state => state.tradeList.list;
 
-export const { tradeItemAdded } = tradeListSlice.actions
+export const {tradeItemAdded} = tradeListSlice.actions
 
 export default tradeListSlice.reducer;
