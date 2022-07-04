@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
     selectTradeList,
@@ -6,10 +6,13 @@ import {
 } from "../../logic/store/tradeListSlice";
 import {MarketItemCard} from "../public/MarketItemCard";
 import {nanoid} from "@reduxjs/toolkit";
+import {MarketCreateModal} from "./MarketCreateModal";
 
 export function MarketPage() {
 
     const dispatch = useDispatch();
+    const [isModalOpen, setIsOpen] = useState(false);
+
     const onAddItemClicked = () => {
 
         dispatch(
@@ -20,6 +23,10 @@ export function MarketPage() {
                 description: "Getting business yadaa yadaa daa"
             })
         );
+    }
+
+    const onOpenModalClicked = () => {
+        setIsOpen(!isModalOpen);
     }
 
     const onDelItemClicked = () => {
@@ -33,11 +40,17 @@ export function MarketPage() {
 
     return (
         <div className="flex flex-col flex-auto">
-            <div className={"self-start"}><h1 className="text-3xl font-bold text-gray-900 mb-5">Market</h1></div>
+
+            <MarketCreateModal isOpen={isModalOpen} setIsOpen={setIsOpen}/>
+
+            <div className={"self-start"}><h1 className="text-3xl font-bold text-gray-900 mb-5">Your Store</h1></div>
             <section className={"self-start"}>
                 <form>
+                    <button type={"button"} className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"} onClick={onOpenModalClicked}>
+                        Create
+                    </button>
                     <button type={"button"} className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"} onClick={onAddItemClicked}>
-                        Save Post
+                        Create
                     </button>
                     <button type={"button"} className={"text-indigo-600 rounded-lg bg-white text-sm px-5 py-2.5 mr-2 mb-2 border border-gray-200"} onClick={onDelItemClicked}>
                         Delete
