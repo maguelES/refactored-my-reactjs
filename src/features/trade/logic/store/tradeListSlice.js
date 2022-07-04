@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const tradeListStore = createSlice({
+export const tradeListSlice = createSlice({
     name: "tradeList",
     initialState: {
         title: "Case Study IV",
@@ -14,4 +14,4 @@ export const selectTradeListTitle = state => state.tradeList.title;
 export const selectTradeListSubtitle = state => state.tradeList.subtitle;
 export const selectTradeListDescription = state => state.tradeList.description;
 
-export default tradeListStore.reducer;
+export default tradeListSlice.reducer;
