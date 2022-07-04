@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import {useSelector} from "react-redux";
 import {
     selectTradeListDescription,
@@ -8,6 +8,10 @@ import {
 import {MarketItemCard} from "../public/MarketItemCard";
 
 export function MarketPage() {
+
+    const [header, setHeader] = useState('')
+    const [subHeader, setSubHeader] = useState('')
+
     const title = useSelector(selectTradeListTitle);
     const subtitle = useSelector(selectTradeListSubtitle)
     const desc = useSelector(selectTradeListDescription);
