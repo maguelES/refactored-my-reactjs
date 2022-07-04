@@ -1,6 +1,10 @@
 import React from "react";
+import {useDispatch} from "react-redux";
+
 import PropTypes from "prop-types";
-import {Dialog} from '@headlessui/react'
+import {Dialog, Transition} from '@headlessui/react'
+import {tradeItemAdded} from "../../logic/store/tradeListSlice";
+import {nanoid} from "@reduxjs/toolkit";
 
 export const MarketCreateModal = ({isOpen, setIsOpen}) => {
 
@@ -8,33 +12,92 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
         setIsOpen(false);
     }
 
+    const dispatch = useDispatch();
+    const onAddItemClicked = () => {
+
+        dispatch(
+            tradeItemAdded({
+                id: nanoid(),
+                header: "Case Study IV",
+                subHeader: "Finding customers might not be a new business after all..",
+                description: "Getting business yadaa yadaa daa"
+            })
+        );
+    }
+
     return (
-        <Dialog
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            className="relative z-50">
+        <Transition
+            show={isOpen}
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+        >
+            <Dialog
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+                className="relative z-50">
 
-            {/* The backdrop, rendered as a fixed sibling to the panel container */}
-            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+                {/* The backdrop, rendered as a fixed sibling to the panel container */}
+                <div className="fixed inset-0 bg-black/30" aria-hidden="true"/>
 
-            <div className="fixed inset-0 flex items-center justify-center">
-                <Dialog.Panel className="mx-auto max-w-sm rounded bg-white p-8">
+                <div className="fixed inset-0 flex items-center justify-center">
+                    <Dialog.Panel className="mx-auto max-w-sm rounded bg-white px-9 py-6">
 
-                    <Dialog.Title>Deactivate account</Dialog.Title>
-                    <Dialog.Description>
-                        This will permanently deactivate your account
-                    </Dialog.Description>
+                        <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-900"}>Create Trade
+                            Item</Dialog.Title>
 
-                    <p>
-                        Are you sure you want to deactivate your account? All of your data
-                        will be permanently removed. This action cannot be undone.
-                    </p>
+                        <div className={"mb-10"}>
+                            <form>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                                        Title
+                                    </label>
+                                    <input
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="username" type="text" placeholder="Username"></input>
+                                </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                                        SubTitle
+                                    </label>
+                                    <input
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="password" type="password" placeholder="******************">
+                                    </input>
+                                    {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
+                                </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                                        Description
+                                    </label>
+                                    <textarea className={"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"}>
 
-                    <button onClick={onCloseModal}>Cancel</button>
-                </Dialog.Panel>
-            </div>
+                                    </textarea>
+                                    {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
+                                </div>
+                            </form>
+                        </div>
 
-        </Dialog>
+                        <button type={"button"}
+                                className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"}
+                                onClick={onAddItemClicked}>
+                            Save
+                        </button>
+
+                        <button type={"button"}
+                                className={"text-indigo-600 rounded-lg bg-white text-sm px-5 py-2.5 mr-2 mb-2 border border-gray-200"}
+                                onClick={onCloseModal}>
+                            Cancel
+                        </button>
+                    </Dialog.Panel>
+                </div>
+
+            </Dialog>
+        </Transition>
+
     );
 }
 
