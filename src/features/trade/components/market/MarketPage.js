@@ -28,9 +28,9 @@ export function MarketPage() {
     return (
         <div className="flex flex-col flex-auto">
             <div className={"self-start"}><h1 className="text-3xl font-bold text-gray-900 mb-5">Market</h1></div>
-            <section>
+            <section className={"self-start"}>
                 <form>
-                    <button type="button" onClick={onAddItemClicked}>
+                    <button type={"button"} className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"} onClick={onAddItemClicked}>
                         Save Post
                     </button>
                 </form>
