@@ -1,24 +1,50 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import {AnnotationIcon, CalendarIcon, DotsHorizontalIcon, TrashIcon} from "@heroicons/react/outline";
+import {TruckIcon} from "@heroicons/react/solid";
 
 export function MarketItemCard({desc, subtitle, title}) {
+
+    const currentDate = new Date();
+
     return (
         <div className="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
-            <div className="md:flex">
-                <div className="md:flex-shrink-0">
-                    <img className="h-48 w-full object-cover md:w-48"
-                         src="https://images.unsplash.com/photo-1653845557936-93bc1c0254ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                         alt="Man looking at item at a store"/>
+            <div className="md:flex-col">
+                <div className={"flex mx-4 my-4"}>
+
+                    <div className={"ml-2 flex rounded-full bg-gray-100 p-2"}>
+                        <TruckIcon className={"h-6 w-6 text-pink-600"}></TruckIcon>
+                    </div>
+
+                    <div className={"flex gap-1 ml-auto"}>
+                        <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}>
+                            <TrashIcon className={"h-5 w-5 "}/>
+                        </button>
+                        <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}>
+                            <DotsHorizontalIcon className={"h-5 w-5 text-gray-500"}/>
+                        </button>
+                    </div>
                 </div>
-                <div className="p-8 md:text-left">
-                    <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{title}</div>
-                    <a href="#"
-                       className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{subtitle}</a>
-                    <p className="mt-2 text-gray-500">{desc}</p>
+
+                <div className="px-8 py-6 md:text-left">
+                    <div className="uppercase tracking-wide text-lg text-gray-800-500 font-bold">{title}</div>
+                    <p className="mt-1 leading-tight text-gray-500">{subtitle}</p>
+                </div>
+
+                <div className={"flex-col px-8 mt-3 mb-8"}>
+                    <div className={"flex"}>
+                        <AnnotationIcon className={"text-gray-600 h-6 w-6"}/>
+                        <span className={"ml-3 text-gray-500"}>Status: Active</span>
+                    </div>
+
+                    <div className={"flex mt-3"}>
+                        <CalendarIcon className={"text-gray-600 h-6 w-6"}/>
+                        <span className={"ml-3 text-gray-500"}>Date: {currentDate.toLocaleDateString()}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 MarketItemCard.propTypes = {
