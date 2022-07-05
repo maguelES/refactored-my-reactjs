@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export function MarketItemCard({desc, subtitle, title}) {
     return (
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
+        <div className="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
             <div className="md:flex">
                 <div className="md:flex-shrink-0">
                     <img className="h-48 w-full object-cover md:w-48"
