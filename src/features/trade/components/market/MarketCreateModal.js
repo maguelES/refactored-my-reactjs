@@ -32,6 +32,11 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                     description: desc
                 })
             );
+
+            setTitle("");
+            setSubTitle("");
+            setDesc("");
+            setIsOpen(false);
         }
 
     }
@@ -57,14 +62,14 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                 <div className="fixed inset-0 flex items-center justify-center">
                     <Dialog.Panel className="mx-auto max-w-sm rounded bg-white px-9 py-6 container">
 
-                        <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-700"}>Create Trade
+                        <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-800"}>Create Trade
                             Item</Dialog.Title>
 
                         <div className={"mb-10"}>
                             <form>
                                 <div className="mb-4">
                                     <label
-                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                                         htmlFor="username">
                                         Title
                                     </label>
@@ -77,7 +82,7 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                                 </div>
                                 <div className="mb-6">
                                     <label
-                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                                         htmlFor="password">
                                         SubTitle
                                     </label>
@@ -92,7 +97,7 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                                 </div>
                                 <div className="mb-6">
                                     <label
-                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
                                         htmlFor="desc">
                                         Description
                                     </label>
