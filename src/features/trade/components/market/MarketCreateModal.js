@@ -1,12 +1,20 @@
-import React from "react";
-import {useDispatch} from "react-redux";
-
+import React, {useState} from "react";
 import PropTypes from "prop-types";
+
+import {useDispatch} from "react-redux";
 import {Dialog, Transition} from '@headlessui/react'
 import {tradeItemAdded} from "../../logic/store/tradeListSlice";
 import {nanoid} from "@reduxjs/toolkit";
 
 export const MarketCreateModal = ({isOpen, setIsOpen}) => {
+
+    const [title, setTitle] = useState("");
+    const [subTitle, setSubTitle] = useState("");
+    const [desc, setDesc] = useState("");
+
+    const onTitleChanged = e => setTitle(e.target.value);
+    const onSubTitleChanged = e => setSubTitle(e.target.value);
+    const onDescChanged = e => setDesc(e.target.value);
 
     const onCloseModal = () => {
         setIsOpen(false);
@@ -15,14 +23,17 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
     const dispatch = useDispatch();
     const onAddItemClicked = () => {
 
-        dispatch(
-            tradeItemAdded({
-                id: nanoid(),
-                header: "Case Study IV",
-                subHeader: "Finding customers might not be a new business after all..",
-                description: "Getting business yadaa yadaa daa"
-            })
-        );
+        if (title && subTitle && desc) {
+            dispatch(
+                tradeItemAdded({
+                    id: nanoid(),
+                    header: title,
+                    subHeader: subTitle,
+                    description: desc
+                })
+            );
+        }
+
     }
 
     return (
@@ -44,7 +55,7 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                 <div className="fixed inset-0 bg-black/30" aria-hidden="true"/>
 
                 <div className="fixed inset-0 flex items-center justify-center">
-                    <Dialog.Panel className="mx-auto max-w-sm rounded bg-white px-9 py-6">
+                    <Dialog.Panel className="mx-auto max-w-sm rounded bg-white px-9 py-6 container">
 
                         <Dialog.Title className={"mb-5 text-2xl font-bold text-gray-700"}>Create Trade
                             Item</Dialog.Title>
@@ -59,7 +70,10 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                                     </label>
                                     <input
                                         className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="username" type="text"></input>
+                                        id="username"
+                                        type="text"
+                                        value={title}
+                                        onChange={onTitleChanged}></input>
                                 </div>
                                 <div className="mb-6">
                                     <label
@@ -69,19 +83,24 @@ export const MarketCreateModal = ({isOpen, setIsOpen}) => {
                                     </label>
                                     <input
                                         className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="password" type="text">
+                                        id="password"
+                                        type="text"
+                                        value={subTitle}
+                                        onChange={onSubTitleChanged}>
                                     </input>
                                     {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
                                 </div>
                                 <div className="mb-6">
                                     <label
                                         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                        htmlFor="password">
+                                        htmlFor="desc">
                                         Description
                                     </label>
                                     <textarea
+                                        id="desc"
+                                        value={desc}
+                                        onChange={onDescChanged}
                                         className={"appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"}>
-
                                     </textarea>
                                     {/*<p className="text-red-500 text-xs italic">Please choose a password.</p>*/}
                                 </div>
