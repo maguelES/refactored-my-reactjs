@@ -1,16 +1,19 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {DotsHorizontalIcon, TrashIcon} from "@heroicons/react/outline";
+import {AnnotationIcon, CalendarIcon, DotsHorizontalIcon, TrashIcon} from "@heroicons/react/outline";
 import {TruckIcon} from "@heroicons/react/solid";
 
 export function MarketItemCard({desc, subtitle, title}) {
+
+    const currentDate = new Date();
+
     return (
         <div className="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
             <div className="md:flex-col">
                 <div className={"flex mx-4 my-4"}>
 
-                    <div className={"flex rounded-full bg-gray-100 p-2"}>
-                        <TruckIcon className={"h-7 w-7 text-pink-600"}></TruckIcon>
+                    <div className={"ml-2 flex rounded-full bg-gray-100 p-2"}>
+                        <TruckIcon className={"h-6 w-6 text-pink-600"}></TruckIcon>
                     </div>
 
                     <div className={"flex gap-1 ml-auto"}>
@@ -22,10 +25,22 @@ export function MarketItemCard({desc, subtitle, title}) {
                         </button>
                     </div>
                 </div>
+
                 <div className="px-8 py-6 md:text-left">
                     <div className="uppercase tracking-wide text-lg text-gray-800-500 font-bold">{title}</div>
                     <p className="mt-1 leading-tight text-gray-500">{subtitle}</p>
-                    <p className="mt-2 text-gray-500">{desc}</p>
+                </div>
+
+                <div className={"flex-col px-8 mt-3 mb-8"}>
+                    <div className={"flex"}>
+                        <AnnotationIcon className={"text-gray-600 h-6 w-6"}/>
+                        <span className={"ml-3 text-gray-500"}>Status: Active</span>
+                    </div>
+
+                    <div className={"flex mt-3"}>
+                        <CalendarIcon className={"text-gray-600 h-6 w-6"}/>
+                        <span className={"ml-3 text-gray-500"}>Date: {currentDate.toLocaleDateString()}</span>
+                    </div>
                 </div>
             </div>
         </div>

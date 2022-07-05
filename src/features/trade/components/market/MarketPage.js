@@ -40,7 +40,7 @@ export function MarketPage() {
                     </button>
                 </form>
             </section>
-            <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-3 items-center items-center gap-4">
+            <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-4 items-center items-center gap-4">
                 {tradeItems}
             </div>
         </div>
