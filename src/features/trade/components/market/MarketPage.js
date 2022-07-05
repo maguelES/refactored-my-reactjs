@@ -21,7 +21,7 @@ export function MarketPage() {
 
     const items = useSelector(selectTradeList);
     const tradeItems = items.map(item => (
-        <MarketItemCard key={item.id} title={item.title} subtitle={item.subtitle} desc={item.description}/>
+        <MarketItemCard className={"container"} key={item.id} title={item.title} subtitle={item.subtitle} desc={item.description}/>
     ));
 
     return (
@@ -40,10 +40,8 @@ export function MarketPage() {
                     </button>
                 </form>
             </section>
-            <div className="flex">
-                <div className="grid lg:grid grid-cols-2 grid-rows-2 items-center items-center gap-4">
-                    {tradeItems}
-                </div>
+            <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-3 items-center items-center gap-4">
+                {tradeItems}
             </div>
         </div>
     );
