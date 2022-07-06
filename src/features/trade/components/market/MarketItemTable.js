@@ -1,11 +1,12 @@
 import React from "react";
+import {TrashIcon} from "@heroicons/react/outline";
 
 export const MarketItemTable = () => {
     return (
 
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-500">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-200">
                 <tr>
                     <th scope="col" className="px-6 py-3">
                         Product name
@@ -39,7 +40,7 @@ export const MarketItemTable = () => {
                         $2999
                     </td>
                     <td className="px-6 py-4 text-right">
-                        <a href="#" className="font-medium text-blue-600 hover:underline">Edit</a>
+                        <TrashIcon className={"h-5 w-5"}/>
                     </td>
                 </tr>
                 <tr className="bg-white border-b">
@@ -56,7 +57,7 @@ export const MarketItemTable = () => {
                         $1999
                     </td>
                     <td className="px-6 py-4 text-right">
-                        
+                        <TrashIcon className={"h-5 w-5"}/>
                     </td>
                 </tr>
                 <tr className="bg-white">
@@ -73,7 +74,7 @@ export const MarketItemTable = () => {
                         $99
                     </td>
                     <td className="px-6 py-4 text-right">
-                        <a href="#" className="font-medium text-blue-600 hover:underline">Edit</a>
+                        <TrashIcon className={"h-5 w-5"}/>
                     </td>
                 </tr>
                 </tbody>
