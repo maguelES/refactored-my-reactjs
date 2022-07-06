@@ -5,6 +5,7 @@ import {MarketItemCard} from "../public/MarketItemCard";
 import {MarketCreateModal} from "./MarketCreateModal";
 import {ViewListIcon} from "@heroicons/react/outline";
 import PropTypes from "prop-types";
+import {MarketItemTable} from "./MarketItemTable";
 
 export const MarketPage = (props) => {
 
@@ -60,6 +61,11 @@ export const MarketPage = (props) => {
                 <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-4 items-center items-center gap-4">
                     {tradeItems}
                 </div>
+            }
+
+            {
+                mode === "table" &&
+                <MarketItemTable/>
             }
 
         </div>
