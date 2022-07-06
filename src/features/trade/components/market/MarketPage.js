@@ -40,7 +40,7 @@ export const MarketPage = (props) => {
             <MarketCreateModal isOpen={isModalOpen} setIsOpen={setIsOpen}/>
 
             <div className={"self-start"}><h1 className="text-3xl font-bold text-gray-900 mb-5">Your Store</h1></div>
-            <section className={"self-start mb-5"}>
+            <section className={"self-start mb-10"}>
                 <form className={"flex justify-items-center"}>
                     <button type={"button"}
                             className={"text-white bg-indigo-600 rounded-lg text-sm px-5 py-2.5 mr-2"}

@@ -58,5 +58,5 @@ MarketItemCard.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
     desc: PropTypes.string,
-    id: PropTypes.number
+    id: PropTypes.any
 }
