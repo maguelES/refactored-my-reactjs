@@ -1,11 +1,15 @@
 import React from "react";
+import {useDispatch} from "react-redux";
 import PropTypes from 'prop-types';
+
 import {AnnotationIcon, CalendarIcon, DotsHorizontalIcon, TrashIcon} from "@heroicons/react/outline";
 import {TruckIcon} from "@heroicons/react/solid";
+import {tradeItemDeletedById} from "../../logic/store/tradeListSlice";
 
-export function MarketItemCard({desc, subtitle, title}) {
+export function MarketItemCard({desc, subtitle, title, id}) {
 
     const currentDate = new Date();
+    const dispatch = useDispatch();
 
     return (
         <div className="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
@@ -17,7 +21,10 @@ export function MarketItemCard({desc, subtitle, title}) {
                     </div>
 
                     <div className={"flex gap-1 ml-auto"}>
-                        <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}>
+                        <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}
+                                onClick={() => {
+                                    dispatch(tradeItemDeletedById({id: id}));
+                                }}>
                             <TrashIcon className={"h-5 w-5 "}/>
                         </button>
                         <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}>
@@ -50,5 +57,6 @@ export function MarketItemCard({desc, subtitle, title}) {
 MarketItemCard.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
-    desc: PropTypes.string
+    desc: PropTypes.string,
+    id: PropTypes.number
 }

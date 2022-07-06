@@ -36,12 +36,18 @@ export const tradeListSlice = createSlice({
 
         tradeItemDeleted(state, action) {
             state.list.pop();
+        },
+
+        tradeItemDeletedById(state, action) {
+            const index = state.list.findIndex(element => element === action.payload.id);
+            state.list.splice(index, 1);
         }
+
     }
 })
 
 export const selectTradeList = state => state.tradeList.list;
 
-export const {tradeItemAdded, tradeItemDeleted} = tradeListSlice.actions
+export const {tradeItemAdded, tradeItemDeleted, tradeItemDeletedById} = tradeListSlice.actions
 
 export default tradeListSlice.reducer;
