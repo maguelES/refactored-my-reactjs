@@ -26,8 +26,12 @@ export const MarketPage = (props) => {
     ));
 
     const query = new URLSearchParams(props.location.search);
-    if (query)
-        console.log("Test");
+    let mode;
+
+    if (query.get("mode") !== "table" || !query.get("mode"))
+        mode = "card";
+    else
+        mode = "table";
 
     return (
         <div className="flex flex-col flex-auto">
@@ -51,9 +55,13 @@ export const MarketPage = (props) => {
                 </form>
             </section>
 
-            <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-4 items-center items-center gap-4">
-                {tradeItems}
-            </div>
+            {
+                mode === "card" &&
+                <div className="grid lg:grid sm:grid-cols-1 lg:grid-cols-4 items-center items-center gap-4">
+                    {tradeItems}
+                </div>
+            }
+
         </div>
     );
 }
