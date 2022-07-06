@@ -39,7 +39,10 @@ export const tradeListSlice = createSlice({
         },
 
         tradeItemDeletedById(state, action) {
-            const index = state.list.findIndex(element => element === action.payload.id);
+            console.log("Payload: ", action.payload.id);
+
+            const index = state.list.findIndex(element => element.id === action.payload.id);
+            console.log("Index: ", index);
             state.list.splice(index, 1);
         }
 
