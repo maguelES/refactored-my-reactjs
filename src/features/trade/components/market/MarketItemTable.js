@@ -1,9 +1,11 @@
 import React from "react";
 import {TrashIcon} from "@heroicons/react/outline";
-import {useSelector} from "react-redux";
-import {selectTradeList} from "../../logic/store/tradeListSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {selectTradeList, tradeItemDeletedById} from "../../logic/store/tradeListSlice";
 
 export const MarketItemTable = () => {
+
+    const dispatch = useDispatch();
 
     const items = useSelector(selectTradeList);
     console.log(items);
@@ -43,8 +45,13 @@ export const MarketItemTable = () => {
                                 <td className="px-6 py-4">
                                     {item.description}
                                 </td>
-                                <td className="px-6 py-4 text-right">
-                                    <TrashIcon className={"h-5 w-5"}/>
+                                <td className="px-6 py-4">
+                                    <button type={"button"} className={"text-gray-500 hover:bg-gray-200 p-2 rounded-lg"}
+                                            onClick={() => {
+                                                dispatch(tradeItemDeletedById({id: item.id}));
+                                            }}>
+                                        <TrashIcon className={"h-5 w-5 "}/>
+                                    </button>
                                 </td>
                             </tr>
                         )
