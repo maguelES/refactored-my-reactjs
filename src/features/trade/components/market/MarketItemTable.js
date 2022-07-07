@@ -1,7 +1,13 @@
 import React from "react";
 import {TrashIcon} from "@heroicons/react/outline";
+import {useSelector} from "react-redux";
+import {selectTradeList} from "../../logic/store/tradeListSlice";
 
 export const MarketItemTable = () => {
+
+    const items = useSelector(selectTradeList);
+    console.log(items);
+
     return (
 
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -9,16 +15,13 @@ export const MarketItemTable = () => {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-200">
                 <tr>
                     <th scope="col" className="px-6 py-3">
-                        Product name
+                        Title
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Color
+                        Sub-Title
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Category
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                        Price
+                        Description
                     </th>
                     <th scope="col" className="px-6 py-3">
                         <span className="sr-only">Edit</span>
@@ -26,57 +29,27 @@ export const MarketItemTable = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr className="bg-white border-b">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        Apple MacBook Pro 17
-                    </th>
-                    <td className="px-6 py-4">
-                        Sliver
-                    </td>
-                    <td className="px-6 py-4">
-                        Laptop
-                    </td>
-                    <td className="px-6 py-4">
-                        $2999
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <TrashIcon className={"h-5 w-5"}/>
-                    </td>
-                </tr>
-                <tr className="bg-white border-b">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        Microsoft Surface Pro
-                    </th>
-                    <td className="px-6 py-4">
-                        White
-                    </td>
-                    <td className="px-6 py-4">
-                        Laptop PC
-                    </td>
-                    <td className="px-6 py-4">
-                        $1999
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <TrashIcon className={"h-5 w-5"}/>
-                    </td>
-                </tr>
-                <tr className="bg-white">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        Magic Mouse 2
-                    </th>
-                    <td className="px-6 py-4">
-                        Black
-                    </td>
-                    <td className="px-6 py-4">
-                        Accessories
-                    </td>
-                    <td className="px-6 py-4">
-                        $99
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                        <TrashIcon className={"h-5 w-5"}/>
-                    </td>
-                </tr>
+
+                {
+                    items.map(item => {
+                        return (
+                            <tr className="bg-white border-b" key={item.id}>
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    {item.title}
+                                </th>
+                                <td className="px-6 py-4">
+                                    {item.subtitle}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {item.description}
+                                </td>
+                                <td className="px-6 py-4 text-right">
+                                    <TrashIcon className={"h-5 w-5"}/>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
             </table>
         </div>
