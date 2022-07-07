@@ -54,7 +54,7 @@ export const MarketPage = (props) => {
                             className={"text-white bg-indigo-50 rounded-lg text-sm p-2 mr-2"} onClick={() => {
                         history.push({
                             pathname: "",
-                            search: "?mode=table"
+                            search: mode === "table" ? "?mode=card" : "?mode=table"
                         })
                     }}>
                         <ViewListIcon className={"h-5 w-5 text-indigo-600"}/>
