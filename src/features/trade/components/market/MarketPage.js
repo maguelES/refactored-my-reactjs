@@ -6,10 +6,12 @@ import {MarketCreateModal} from "./MarketCreateModal";
 import {ViewListIcon} from "@heroicons/react/outline";
 import PropTypes from "prop-types";
 import {MarketItemTable} from "./MarketItemTable";
+import {useHistory} from "react-router-dom";
 
 export const MarketPage = (props) => {
 
     const [isModalOpen, setIsOpen] = useState(false);
+    const history = useHistory();
 
     const onOpenModalClicked = () => {
         setIsOpen(!isModalOpen);
@@ -49,7 +51,12 @@ export const MarketPage = (props) => {
                     </button>
 
                     <button type={"button"}
-                            className={"text-white bg-indigo-50 rounded-lg text-sm p-2 mr-2"}>
+                            className={"text-white bg-indigo-50 rounded-lg text-sm p-2 mr-2"} onClick={() => {
+                        history.push({
+                            pathname: "",
+                            search: mode === "table" ? "?mode=card" : "?mode=table"
+                        })
+                    }}>
                         <ViewListIcon className={"h-5 w-5 text-indigo-600"}/>
                     </button>
 
