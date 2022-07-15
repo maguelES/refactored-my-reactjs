@@ -10,7 +10,7 @@ export const PersonalPageTab = () => {
     let [categories] = useState([
         {
             id: 1,
-            title: "Profile"
+            title: "Profile",
         },
         {
             id: 2,
@@ -23,9 +23,9 @@ export const PersonalPageTab = () => {
     ])
 
     return (
-        <div className={"w-full max-w-md"}>
+        <div className={" max-w-md"}>
             <Tab.Group vertical>
-                <Tab.List className={"flex space-x-1 rounded-xl p-1"}>
+                <Tab.List className={"flex-column space-x-1 rounded-xl p-1"}>
                     {categories.map(cat => {
                         return (
                             <Tab
