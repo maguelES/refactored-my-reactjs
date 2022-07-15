@@ -1,4 +1,5 @@
 import React from "react";
+import {PersonalPageTab} from "./PersonalPageTab";
 
 export function PersonalPage() {
     return (
@@ -9,8 +10,12 @@ export function PersonalPage() {
                 </span>
             </div>
 
-            <div className="flex bg-white drop-shadow-md px-5 py-4 rounded-md mt-2 flex-grow">
-                <span className="text-lg font-bold text-gray-800">User&apos;s Name</span>
+            <div className={"flex gap-5"}>
+                <PersonalPageTab/>
+
+                <div className="flex bg-white drop-shadow-md px-5 py-4 rounded-md mt-2 flex-grow">
+                    <span className="text-lg font-bold text-gray-800">User&apos;s Name</span>
+                </div>
             </div>
         </div>
     );
