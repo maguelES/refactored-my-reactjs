@@ -18,7 +18,7 @@ export function PersonalPage() {
             <div className={"flex flex-col md:flex-row gap-10"}>
                 <PersonalPageTab/>
 
-                <div className="flex bg-white shadow px-5 py-4 rounded-md mt-2 ml-3 flex-grow">
+                <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow">
                     {/*<span className="text-lg font-bold text-gray-800">User&apos;s Name</span>*/}
                     <PersonalPageProfile/>
                 </div>
