@@ -9,7 +9,7 @@ export const PersonalPageProfile = () => {
 
                 {/* Profile Image & Action Button */}
                 <div className={"flex flex-col md:flex-row"}>
-                    <div className={" my-4 ml-8 w-24 h-24 md:h-48"}>
+                    <div className={" my-4 ml-8 w-24 h-24"}>
                         <img className={"border border-gray-50 rounded-full shadow object-fill"}
                              src={"https://randomuser.me/api/portraits/men/85.jpg"} alt={"Here here"}/>
                     </div>
