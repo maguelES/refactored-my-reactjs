@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Tab} from '@headlessui/react'
+import {useHistory} from "react-router-dom";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -7,24 +8,40 @@ function classNames(...classes) {
 
 export const PersonalPageTab = () => {
 
+    const router = useHistory();
     let [categories] = useState([
         {
             id: 1,
             title: "Profile",
+            url: ""
         },
         {
             id: 2,
-            title: "Settings"
+            title: "Settings",
+            url: "settings"
         },
         {
             id: 3,
-            title: "Notifications"
+            title: "Notifications",
+            url: "notifications"
         }
     ])
 
+    const handleOnChange = (index) => {
+        switch (index) {
+            case 0:
+                router.push("/personal");
+                break;
+            default:
+                router.push("/personal/settings");
+                break;
+
+        }
+    };
+
     return (
-        <div className={" max-w-md"}>
-            <Tab.Group vertical>
+        <div className={"max-w-md"}>
+            <Tab.Group vertical onChange={handleOnChange}>
                 <Tab.List className={"flex-column space-x-1 rounded-xl p-1"}>
                     {categories.map(cat => {
                         return (

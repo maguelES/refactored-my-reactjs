@@ -1,11 +1,30 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {PersonalPageTab} from "./PersonalPageTab";
 import {PersonalPageProfile} from "./PersonalPageProfile";
+import PropTypes from "prop-types";
 
-export function PersonalPage() {
+export function PersonalPage({history}) {
 
-    const [page] = useState("profile");
-    console.log(page);
+    const [page, setPage] = useState("profile");
+
+    useEffect(() => {
+        return () => {
+
+            history.listen((loc) => {
+                console.log(loc.pathname);
+                switch (loc.pathname) {
+                    case "/personal":
+                        console.log("Base Personal");
+                        setPage("profile");
+                        break;
+                    default:
+                        setPage("settings");
+                        break;
+                }
+            })
+        };
+    }, []);
+
 
     return (
         <div className="flex flex-col flex-grow">
@@ -18,11 +37,19 @@ export function PersonalPage() {
             <div className={"flex flex-col md:flex-row gap-10"}>
                 <PersonalPageTab/>
 
-                <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl self-center">
-                    {/*<span className="text-lg font-bold text-gray-800">User&apos;s Name</span>*/}
-                    <PersonalPageProfile/>
-                </div>
+                {
+                    page === "profile" ?
+                        <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl self-center">
+                            {/*<span className="text-lg font-bold text-gray-800">User&apos;s Name</span>*/}
+                            <PersonalPageProfile/>
+                        </div> : <h1>Hehe</h1>
+                }
+
             </div>
         </div>
     );
+}
+
+PersonalPage.propTypes = {
+    history: PropTypes.any
 }
