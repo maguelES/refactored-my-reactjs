@@ -1,7 +1,11 @@
 import React from "react";
 import {Menu} from '@headlessui/react'
+import { useHistory } from "react-router-dom";
 
 export function PrimaryLayoutUserIcon() {
+
+    const router = useHistory();
+
     return (
         <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
@@ -28,6 +32,7 @@ export function PrimaryLayoutUserIcon() {
                                         className={`${
                                             active ? 'bg-gray-100 text-gray-700' : 'text-gray-900'
                                         } group flex w-full items-center rounded-md  px-4 py-2`}
+                                        onClick={() => router.push("/personal")}
                                     >
                                         Your Profile
                                     </button>
