@@ -32,8 +32,11 @@ export const PersonalPageTab = () => {
             case 0:
                 router.push("/personal");
                 break;
-            default:
+            case 1:
                 router.push("/personal/settings");
+                break;
+            default:
+                router.push("/personal/notifications");
                 break;
 
         }
