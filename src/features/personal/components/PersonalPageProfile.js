@@ -2,7 +2,7 @@ import React from "react";
 
 export const PersonalPageProfile = () => {
     return (
-        <div className={"flex flex-col min-w-full"}>
+        <div className={"flex flex-col flex-grow"}>
             <div className={"flex flex-col rounded-lg"}>
                 <div className={"hidden md:block h-36 bg-gradient-to-r from-violet-500 to-fuchsia-500"}>
                 </div>
