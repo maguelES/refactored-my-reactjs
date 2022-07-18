@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Tab} from '@headlessui/react'
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -9,7 +9,20 @@ function classNames(...classes) {
 export const PersonalPageTab = () => {
 
     const router = useHistory();
-    let [categories] = useState([
+    const location = useLocation();
+    const [selectedIndex] = useState(() => {
+        switch (location.pathname) {
+            case "/personal":
+                return 0;
+            case "/personal/settings":
+                return 1;
+            default:
+                return 2;
+
+        }
+    });
+
+    const [categories] = useState([
         {
             id: 1,
             title: "Profile",
@@ -44,7 +57,7 @@ export const PersonalPageTab = () => {
 
     return (
         <div className={"max-w-md"}>
-            <Tab.Group vertical onChange={handleOnChange}>
+            <Tab.Group vertical onChange={handleOnChange} selectedIndex={selectedIndex}>
                 <Tab.List className={"flex-column space-x-1 rounded-xl p-1"}>
                     {categories.map(cat => {
                         return (
