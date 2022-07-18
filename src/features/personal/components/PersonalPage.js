@@ -2,10 +2,12 @@ import React, {useEffect, useState} from "react";
 import {PersonalPageTab} from "./PersonalPageTab";
 import {PersonalPageProfile} from "./PersonalPageProfile";
 import PropTypes from "prop-types";
+import {Route, Switch} from "react-router-dom";
 
 export function PersonalPage({history}) {
 
     const [page, setPage] = useState("profile");
+    console.log(page);
 
     useEffect(() => {
         return () => {
@@ -37,13 +39,20 @@ export function PersonalPage({history}) {
             <div className={"flex flex-col md:flex-row gap-10"}>
                 <PersonalPageTab/>
 
-                {
-                    page === "profile" &&
+                <Switch>
+                    <Route exact path={"/personal"}>
                         <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl self-center">
                             {/*<span className="text-lg font-bold text-gray-800">User&apos;s Name</span>*/}
                             <PersonalPageProfile/>
                         </div>
-                }
+                    </Route>
+
+                    <Route path={"/personal/settings"}>
+                        <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl self-center">
+                            <span> Hehe </span>
+                        </div>
+                    </Route>
+                </Switch>
 
             </div>
         </div>
