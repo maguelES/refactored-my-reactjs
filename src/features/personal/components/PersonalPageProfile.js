@@ -1,9 +1,10 @@
 import React from "react";
+import {PersonalPageProfileForm} from "./PersonalPageProfileForm";
 
 export const PersonalPageProfile = () => {
     return (
         <div className={"flex flex-col flex-grow"}>
-            <div className={"flex flex-col rounded-lg"}>
+            <div className={"flex flex-col"}>
                 <div className={"hidden md:block h-36 bg-gradient-to-r from-violet-500 to-fuchsia-500"}>
                 </div>
 
@@ -31,6 +32,7 @@ export const PersonalPageProfile = () => {
                 </div>
 
             </div>
+            <PersonalPageProfileForm/>
         </div>
     );
 }
