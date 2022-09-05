@@ -41,7 +41,7 @@ export function PersonalPage({history}) {
 
                 <Switch>
                     <Route exact path={"/personal"}>
-                        <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl self-center">
+                        <div className="flex bg-white shadow rounded-lg mt-2 ml-3 flex-grow max-w-6xl">
                             {/*<span className="text-lg font-bold text-gray-800">User&apos;s Name</span>*/}
                             <PersonalPageProfile/>
                         </div>
