@@ -48,6 +48,16 @@ export const PersonalPageProfileForm = () => {
                         </div>
                     </div>
 
+                    {/* Bio */}
+                    <div className="grid grid-cols-2 gap-6 mt-6">
+                        <div className="col-span-12">
+                            <label htmlFor="bio" className="block text-left text-sm font-medium text-gray-700">Bio</label>
+                            <textarea name="bio" id="bio"
+                                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </form>
