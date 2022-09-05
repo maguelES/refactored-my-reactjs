@@ -10,6 +10,7 @@ export const PersonalPageProfileForm = () => {
     ]);
 
     const dispatch = useDispatch();
+
     const handleFirstName = (firstName) => {
         dispatch(profileFirstNameChange({firstName}))
     }

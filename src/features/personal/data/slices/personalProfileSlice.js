@@ -9,6 +9,18 @@ export const personalProfileSlice = createSlice({
         profileFirstNameChange(state, action) {
             console.log("Payload: ", action.payload.firstName)
             state.firstName = action.payload.firstName;
+        },
+
+        profileLastNameChanged(state, action) {
+            state.lastName = action.payload.lastName;
+        },
+
+        profileCountryChanged(state, action) {
+            state.country = action.payload.country;
+        },
+
+        profileBioChanged(state, action) {
+            state.bio = action.payload.bio;
         }
     }
 })
