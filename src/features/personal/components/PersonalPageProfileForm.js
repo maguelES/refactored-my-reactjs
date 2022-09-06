@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {profileFirstNameChange} from "../data/slices/personalProfileSlice";
 import {useDispatch} from "react-redux";
+import {AppSuccessModal} from "../../common/components/modal/AppSuccessModal";
 
 export const PersonalPageProfileForm = () => {
 
@@ -70,6 +71,11 @@ export const PersonalPageProfileForm = () => {
 
                 </div>
             </form>
+
+            <AppSuccessModal
+                isOpen={true}
+                setIsOpen={() => console.log("Hehe")}
+                title={"Success"}/>
         </div>
     );
 }

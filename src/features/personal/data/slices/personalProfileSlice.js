@@ -27,6 +27,11 @@ export const personalProfileSlice = createSlice({
 
 export const selectPersonalProfileBusy = state => state.personalProfile.isBusy;
 
-export const {profileFirstNameChange} = personalProfileSlice.actions;
+export const {
+    profileFirstNameChange,
+    profileLastNameChanged,
+    profileCountryChanged,
+    profileBioChanged
+} = personalProfileSlice.actions;
 
 export default personalProfileSlice.reducer;
