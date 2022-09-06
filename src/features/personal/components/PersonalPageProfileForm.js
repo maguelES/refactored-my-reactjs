@@ -10,6 +10,8 @@ export const PersonalPageProfileForm = () => {
         {id: 1, text: "Indonesia", value: 2}
     ]);
 
+    const [successModal, setSuccessModal] = useState(false);
+
     const dispatch = useDispatch();
 
     const handleFirstName = (firstName) => {
@@ -73,8 +75,8 @@ export const PersonalPageProfileForm = () => {
             </form>
 
             <AppSuccessModal
-                isOpen={true}
-                setIsOpen={() => console.log("Hehe")}
+                isOpen={successModal}
+                setIsOpen={setSuccessModal}
                 title={"Success"}/>
         </div>
     );

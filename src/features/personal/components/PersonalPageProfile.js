@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import {PersonalPageProfileForm} from "./PersonalPageProfileForm";
+import {AppSuccessModal} from "../../common/components/modal/AppSuccessModal";
 
 export const PersonalPageProfile = () => {
+
+    const [successModal, setSuccessModal] = useState(false);
+
     return (
         <div className={"flex flex-col flex-grow"}>
             <div className={"flex flex-col"}>
@@ -25,7 +29,8 @@ export const PersonalPageProfile = () => {
                             className={"bg-white text-gray-700 border border-gray-300 font-semibold rounded rounded-lg px-3 py-2 mr-3"}>
                             Cancel
                         </button>
-                        <button className={"bg-indigo-600/90 text-white font-semibold rounded rounded-lg px-3 py-2"}>
+                        <button className={"bg-indigo-600/90 text-white font-semibold rounded rounded-lg px-3 py-2"}
+                                onClick={() => setSuccessModal(true)}>
                             Submit
                         </button>
                     </div>
@@ -33,6 +38,10 @@ export const PersonalPageProfile = () => {
 
             </div>
             <PersonalPageProfileForm/>
+            <AppSuccessModal
+                isOpen={successModal}
+                setIsOpen={setSuccessModal}
+                title={"Success"}/>
         </div>
     );
 }
