@@ -1,4 +1,7 @@
 import React, {useState} from "react";
+import {profileFirstNameChange} from "../data/slices/personalProfileSlice";
+import {useDispatch} from "react-redux";
+import {AppSuccessModal} from "../../common/components/modal/AppSuccessModal";
 
 export const PersonalPageProfileForm = () => {
 
@@ -7,17 +10,27 @@ export const PersonalPageProfileForm = () => {
         {id: 1, text: "Indonesia", value: 2}
     ]);
 
+    const [successModal, setSuccessModal] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const handleFirstName = (firstName) => {
+        dispatch(profileFirstNameChange({firstName}))
+    }
+
     return (
         <div>
             <form action="#" method="POST">
                 <div className="px-4 py-5 bg-white sm:p-6">
+
                     {/* FIrst Name*/}
                     <div className="grid grid-cols-2 gap-6">
                         <div className="col-span-12">
                             <label htmlFor="first-name" className="block text-left text-sm font-medium text-gray-700">First
                                 name</label>
                             <input type="text" name="first-name" id="first-name"
-                                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                   onChange={(event) => handleFirstName(event.target.value)}/>
                         </div>
                     </div>
 
@@ -48,9 +61,23 @@ export const PersonalPageProfileForm = () => {
                         </div>
                     </div>
 
+                    {/* Bio */}
+                    <div className="grid grid-cols-2 gap-6 mt-6">
+                        <div className="col-span-12">
+                            <label htmlFor="bio"
+                                   className="block text-left text-sm font-medium text-gray-700">Bio</label>
+                            <textarea name="bio" id="bio"
+                                      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                        </div>
+                    </div>
 
                 </div>
             </form>
+
+            <AppSuccessModal
+                isOpen={successModal}
+                setIsOpen={setSuccessModal}
+                title={"Success"}/>
         </div>
     );
 }
